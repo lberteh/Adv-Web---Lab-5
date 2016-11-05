@@ -5,14 +5,8 @@ var router = express.Router(); // interpret url request
 var Game = require('../models/game');
 
 // auth check
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    next();
-  }
-  else {
-    res.redirect('/login');
-  }
-}
+var config = require('../scripts/globalScripts');
+var isLoggedIn = config.isLoggedIn;
 
 // GET handler for /games
 router.get('/', isLoggedIn, function(req, res, next) {
