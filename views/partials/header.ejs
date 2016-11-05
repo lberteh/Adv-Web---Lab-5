@@ -50,7 +50,7 @@ File description: Shared header for every view in the website. Contains links to
         <% if (user) { %>
           <li><a href="/users">Accounts</a></li>
           <li><a href="/games">Games</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <li><a href="/logout">Logout</a></li>        
         <% }
         else { %>
           <li><a href="/register">Register</a></li>
@@ -62,4 +62,8 @@ File description: Shared header for every view in the website. Contains links to
       </ul>
     </div>
   </nav>
+
+  <% if (user) { %>
+    <p style="margin-left: 20px; margin-top: -5px;">Welcome, <strong><%= user.username %></strong></p>
+  <% } %>
   <!-- End of page navigation bar -->
